@@ -1,0 +1,627 @@
+/* Reset específico para HomePage */
+.home-main * {
+    box-sizing: border-box;
+  }
+  
+  .home-main {
+    min-height: 100vh;
+    width: 100%;
+    background: linear-gradient(to bottom right, #f9fafb, #e5e7eb);
+    font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    position: relative;
+  }
+  
+  /* Resetear los estilos del body solo para esta página */
+  body:has(.home-main) {
+    display: block !important;
+    align-items: initial !important;
+    justify-content: initial !important;
+    background: transparent !important;
+  }
+  
+  /* Header */
+  .home-header {
+    background: white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .header-content {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .logo-section {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  
+  .bike-icon {
+    font-size: 2rem;
+  }
+  
+  .logo-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: linear-gradient(to right, #00a8c6, #aee239);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .header-nav {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+  }
+  
+  .header-nav button {
+    background: none;
+    border: none;
+    color: #6b7280;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: color 0.3s;
+    font-family: inherit;
+    padding: 0.5rem 1rem;
+  }
+  
+  .header-nav button:hover {
+    color: #00a8c6;
+  }
+  
+  .logout-btn {
+    background: #00a8c6 !important;
+    color: white !important;
+    padding: 0.5rem 1.5rem !important;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    transition: all 0.3s;
+  }
+  
+  .logout-btn:hover {
+    background: #40c0cb !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 168, 198, 0.3);
+  }
+  
+  /* Hero Section */
+  .hero-section {
+    width: 100%;
+    padding: 3rem 1.5rem;
+    background: linear-gradient(to bottom right, #f9fafb, #e5e7eb);
+  }
+  
+  .hero-text {
+    text-align: center;
+    margin-bottom: 2rem;
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .hero-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 1rem;
+  }
+  
+  .highlight {
+    color: #00a8c6;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.25rem;
+    color: #6b7280;
+  }
+  
+  /* Search Box */
+  .search-box {
+    background: white;
+    border-radius: 1rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    max-width: 42rem;
+    margin: 0 auto 3rem;
+  }
+  
+  .search-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .search-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .input-group {
+    position: relative;
+  }
+  
+  .input-icon {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.25rem;
+  }
+  
+  .input-icon.destination {
+    color: #aee239;
+  }
+  
+  .search-input {
+    width: 100%;
+    padding: 1rem 1rem 1rem 3rem;
+    border: 2px solid #e5e7eb;
+    border-radius: 0.75rem;
+    font-size: 1rem;
+    transition: all 0.3s;
+    font-family: inherit;
+  }
+  
+  .search-input:focus {
+    outline: none;
+    border-color: #00a8c6;
+    box-shadow: 0 0 0 3px rgba(0, 168, 198, 0.1);
+  }
+  
+  .search-button {
+    width: 100%;
+    background: linear-gradient(to right, #00a8c6, #40c0cb);
+    color: white;
+    padding: 1rem;
+    border: none;
+    border-radius: 0.75rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-family: inherit;
+  }
+  
+  .search-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 168, 198, 0.3);
+  }
+  
+  /* Sections */
+  .bikes-section,
+  .services-section,
+  .stats-section {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 2rem;
+  }
+  
+  /* Bikes Grid */
+  .bikes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .bike-card {
+    background: white;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+    transition: all 0.3s;
+  }
+  
+  .bike-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  }
+  
+  .bike-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+  }
+  
+  .bike-name {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1f2937;
+  }
+  
+  .bike-type {
+    font-size: 0.875rem;
+    color: #6b7280;
+  }
+  
+  .bike-icon-large {
+    font-size: 2rem;
+  }
+  
+  .bike-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .detail-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    color: #6b7280;
+  }
+  
+  .detail-icon {
+    font-size: 1rem;
+  }
+  
+  .battery-info {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .battery-bar {
+    flex: 1;
+    height: 0.5rem;
+    background: #e5e7eb;
+    border-radius: 1rem;
+    overflow: hidden;
+  }
+  
+  .battery-fill {
+    height: 100%;
+    background: linear-gradient(to right, #aee239, #8fbe00);
+    border-radius: 1rem;
+    transition: width 0.3s;
+  }
+  
+  .battery-text {
+    font-size: 0.875rem;
+    color: #6b7280;
+    min-width: 40px;
+  }
+  
+  .bike-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    border-top: 1px solid #e5e7eb;
+  }
+  
+  .bike-price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #00a8c6;
+  }
+  
+  .reserve-btn {
+    background: #00a8c6;
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-family: inherit;
+  }
+  
+  .reserve-btn:hover {
+    background: #40c0cb;
+    transform: translateY(-2px);
+  }
+  
+  /* Services Grid */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+  
+  .service-card {
+    background: white;
+    border-radius: 1rem;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+    transition: all 0.3s;
+    cursor: pointer;
+  }
+  
+  .service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  }
+  
+  .service-icon {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 1.5rem;
+  }
+  
+  .service-card h2 {
+    font-size: 1.5rem;
+    color: #1f2937;
+    margin-bottom: 1rem;
+  }
+  
+  .service-card p {
+    color: #6b7280;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+  }
+  
+  .service-btn {
+    background: linear-gradient(to right, #00a8c6, #40c0cb);
+    color: white;
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-family: inherit;
+  }
+  
+  .service-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 168, 198, 0.3);
+  }
+  
+  /* Benefits Section */
+  .benefits-section {
+    background: linear-gradient(to bottom right, #00a8c6, #40c0cb, #aee239);
+    padding: 4rem 1.5rem;
+    margin: 3rem 0;
+  }
+  
+  .section-title-white {
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+    text-align: center;
+    margin-bottom: 3rem;
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+  
+  .benefit-card {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 1rem;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s;
+  }
+  
+  .benefit-card:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-4px);
+  }
+  
+  .benefit-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .benefit-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 0.5rem;
+  }
+  
+  .benefit-desc {
+    color: rgba(255, 255, 255, 0.9);
+  }
+  
+  /* Stats Section */
+  .stats-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .stat-card {
+    background: white;
+    border-radius: 1rem;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+  }
+  
+  .stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #00a8c6;
+    margin-bottom: 0.5rem;
+  }
+  
+  .stat-label {
+    color: #6b7280;
+    font-size: 1rem;
+  }
+  
+  /* Footer */
+  .home-footer {
+    background: #1f2937;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 3rem;
+  }
+  
+  .home-footer p {
+    color: #9ca3af;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .header-nav {
+      gap: 0.5rem;
+    }
+  
+    .header-nav button {
+      font-size: 0.75rem;
+      padding: 0.4rem 0.6rem;
+    }
+  
+    .hero-title {
+      font-size: 2rem;
+    }
+  
+    .hero-subtitle {
+      font-size: 1rem;
+    }
+  
+    .search-box {
+      padding: 1.5rem;
+    }
+  
+    .section-title {
+      font-size: 1.5rem;
+    }
+  
+    .bikes-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .services-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .benefits-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .stats-section {
+      grid-template-columns: 1fr;
+    }
+  }
+
+
+  /* 🔷 Logo + Título en el header */
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  
+  /* 🖼️ Logo del header */
+  .header-logo {
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 6px;
+    box-shadow: 0 4px 10px rgba(0, 168, 198, 0.25);
+    transition: all 0.3s ease;
+  }
+  
+  .header-logo:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(0, 168, 198, 0.35);
+  }
+  
+  /* Título al lado del logo */
+  .logo-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    background: linear-gradient(90deg, #00A8C6, #AEE239);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: 1px;
+  }
+  
+
+  /* Tablets y pantallas medianas */
+@media (max-width: 1024px) {
+  .perfil-hero {
+    flex-direction: column;
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .perfil-stats {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+/* Celulares (pantallas pequeñas) */
+@media (max-width: 768px) {
+  .perfil-header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+
+  .perfil-logo span {
+    font-size: 1.3rem;
+  }
+
+  .perfil-avatar {
+    width: 100px;
+    height: 100px;
+  }
+
+  .perfil-stats {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .perfil-card {
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .perfil-tabs {
+    flex-wrap: wrap;
+  }
+
+  .perfil-contenido {
+    padding: 1.5rem;
+  }
+}

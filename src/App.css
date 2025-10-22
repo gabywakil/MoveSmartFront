@@ -1,0 +1,486 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 🌐 Base */
+html, body, #root {
+  @apply w-full h-full m-0 p-0 font-[Poppins];
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  background-color: #000; /* Para evitar márgenes negros */
+}
+
+/* Contenedor principal sin márgenes */
+.main-container {
+  width: 100vw;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: #000;
+}
+
+/* 🎞️ Hero section con GIF */
+.hero-section {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* 💡 ESTILOS CLAVE para que el GIF se vea en pantalla completa */
+  background-size: cover !important;      /* Escala el GIF sin perder proporción */
+  background-position: center center !important; /* Centra la imagen */
+  background-repeat: no-repeat !important; /* Evita los cuadritos repetidos */
+  background-attachment: fixed;            /* Hace que el fondo quede fijo al hacer scroll */
+  overflow: hidden;
+}
+
+/* 🌫️ Capa blanca translúcida encima del GIF */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.45),
+    rgba(0, 168, 198, 0.2),
+    rgba(174, 226, 57, 0.15)
+  );
+  backdrop-filter: blur(2px);
+  z-index: 1;
+}
+
+
+/* 🪪 Logo */
+.logo {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  z-index: 10;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.75);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  padding: 5px;
+  transition: all 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.08);
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* Contenido centrado */
+.content {
+  position: relative;
+  z-index: 5;
+  text-align: center;
+}
+
+/* 🅰️ Título principal - MÁS GRANDE Y LLAMATIVO */
+.main-container .title {
+  font-size: clamp(5rem, 16vw, 11rem);
+  font-weight: 800;
+  background: #022c35;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 0.85;
+  letter-spacing: 0.05em;
+  margin-bottom: 1rem;
+  animation: titlePulseGlow 4s ease-in-out infinite;
+  text-shadow: 0 0 40px rgba(0, 168, 198, 0.5);
+  filter: drop-shadow(0 10px 30px rgba(0, 168, 198, 0.4));
+}
+
+.main-container .subtitle {
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  font-weight: 900;
+  background: linear-gradient(135deg, #FFEB3B 0%, #AEE239 50%, #8FBE00 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  margin-top: 1rem;
+  animation: subtitleNeon 3s ease-in-out infinite alternate;
+  filter: drop-shadow(0 0 20px rgba(174, 226, 57, 0.8));
+}
+
+
+/* Animaciones mejoradas */
+@keyframes titlePulseGlow {
+  0%, 100% {
+    transform: scale(1);
+    filter: drop-shadow(0 10px 30px rgba(0, 168, 198, 0.4)) brightness(1);
+  }
+  50% {
+    transform: scale(1.03);
+    filter: drop-shadow(0 15px 50px rgba(0, 212, 255, 0.7)) brightness(1.2);
+  }
+}
+
+@keyframes subtitleNeon {
+  0% {
+    filter: drop-shadow(0 0 20px rgba(174, 226, 57, 0.6));
+    transform: translateY(0);
+  }
+  50% {
+    filter: drop-shadow(0 0 40px rgba(174, 226, 57, 0.9)) 
+            drop-shadow(0 0 60px rgba(255, 235, 59, 0.5));
+    transform: translateY(-5px);
+  }
+  100% {
+    filter: drop-shadow(0 0 30px rgba(143, 190, 0, 0.8));
+    transform: translateY(0);
+  }
+}
+
+/* 🌟 ANIMACIONES */
+@keyframes floatIn {
+  0% {
+    opacity: 0;
+    transform: translateY(50px) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes titlePulse {
+  0%, 100% {
+    transform: scale(1);
+    filter: brightness(1);
+  }
+  50% {
+    transform: scale(1.02);
+    filter: brightness(1.1);
+  }
+}
+
+@keyframes subtitleGlow {
+  0% {
+    text-shadow: 0 0 20px rgba(174, 226, 57, 0.5);
+  }
+  100% {
+    text-shadow: 0 0 40px rgba(174, 226, 57, 0.8), 
+                 0 0 60px rgba(174, 226, 57, 0.4);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(40px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+
+/* 🔘 Botones */
+.button-container {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.button-primary,
+.button-secondary {
+  border: none;
+  border-radius: 10px;
+  padding: 0.75rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: white;
+}
+
+.button-primary {
+  background-color: #00A8C6;
+}
+
+.button-primary:hover {
+  background-color: #40C0CB;
+  transform: translateY(-2px);
+}
+
+.button-secondary {
+  background-color: #AEE239;
+  color: #213547;
+}
+
+.button-secondary:hover {
+  background-color: #8FBE00;
+  transform: translateY(-2px);
+}
+
+/* 🌍 Info Section (100% pantalla completa sin márgenes) */
+.info-section {
+  width: 100vw;
+  min-height: 100vh;
+  margin: 0;
+  padding: 100px 20px;
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  text-align: center;
+}
+
+.info-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 60px;
+  color: #AEE239;
+}
+
+.highlight {
+  color: #00A8C6;
+}
+
+
+.info-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* 🌈 GRADIENTE dinámico en las cards */
+.card {
+  background: linear-gradient(135deg, rgba(0, 168, 198, 0.35), rgba(57, 125, 226, 0.12));
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 16px;
+  padding: 40px 25px;
+  color: #000;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  backdrop-filter: blur(1px);
+}
+
+.card:hover {
+  background: linear-gradient(135deg, rgba(0, 168, 198, 0.25), rgba(174, 226, 57, 0.25));
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 10px 25px rgba(0, 168, 198, 0.25);
+}
+
+.card h3 {
+  color: #00A8C6;
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+}
+
+.card p {
+  color: #213547;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* 🖼️ Imagen dentro de las cards */
+.card-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  transition: transform 0.4s ease, opacity 0.3s ease;
+}
+
+.card:hover .card-image {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+/* Ícono */
+.icon {
+  font-size: 2.5rem;
+  color: #40C0CB;
+  margin-bottom: 15px;
+}
+
+/* 🧾 Footer */
+.footer {
+  width: 100vw;
+  padding: 20px;
+  background-color: #0d0d0d;
+  color: #aaa;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* 🔝 NAVBAR SUPERIOR FIJO */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  z-index: 50;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo dentro del navbar */
+.navbar-logo {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.navbar-logo:hover {
+  transform: scale(1.05);
+}
+
+/* Botón de inicio de sesión */
+.navbar-button {
+  background-color: #00A8C6;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 168, 198, 0.3);
+}
+
+.navbar-button:hover {
+  background-color: #40C0CB;
+  transform: translateY(-2px);
+}
+
+/* Evitar que el contenido se oculte debajo del navbar */
+.hero-section {
+  padding-top: 70px;
+}
+
+/* 🔝 NAVBAR SUPERPUESTA ENCIMA DEL GIF */
+.navbar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  z-index: 50;
+ 
+  backdrop-filter: blur(10px);
+  
+}
+
+/* Logo (mismo estilo, solo adaptado al navbar) */
+.navbar-logo {
+  width: 78px;
+  height: 78px;
+  border-radius: 12px;
+  padding: 6px;
+  object-fit: contain;
+  background-color: #ddd;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.navbar-logo:hover {
+  transform: scale(1.08);
+}
+
+/* Botón de inicio de sesión */
+.navbar-button {
+  background-color: #00A8C6;
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 168, 198, 0.3);
+}
+
+.navbar-button:hover {
+  background-color: #40C0CB;
+  transform: translateY(-2px);
+}
+
+/* Tablets y pantallas medianas */
+@media (max-width: 1024px) {
+  .perfil-hero {
+    flex-direction: column;
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .perfil-stats {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+/* Celulares (pantallas pequeñas) */
+@media (max-width: 768px) {
+  .perfil-header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+
+  .perfil-logo span {
+    font-size: 1.3rem;
+  }
+
+  .perfil-avatar {
+    width: 100px;
+    height: 100px;
+  }
+
+  .perfil-stats {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .perfil-card {
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .perfil-tabs {
+    flex-wrap: wrap;
+  }
+
+  .perfil-contenido {
+    padding: 1.5rem;
+  }
+}
+

@@ -1,0 +1,389 @@
+/* ============================= */
+/* 💳 AGREGAR TARJETA - STRIPE */
+/* ============================= */
+
+.agregar-tarjeta-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    padding: 1rem;
+    animation: fadeIn 0.3s ease-out;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .agregar-tarjeta-modal {
+    background: white;
+    border-radius: 2rem;
+    max-width: 500px;
+    width: 100%;
+    padding: 2.5rem;
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.3);
+    position: relative;
+    animation: slideUp 0.4s ease-out;
+  }
+  
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .modal-close-btn {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    background: #f1f5f9;
+    color: #64748b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .modal-close-btn:hover {
+    background: #e2e8f0;
+    color: #0f172a;
+    transform: rotate(90deg);
+  }
+  
+  /* ============================= */
+  /* HEADER */
+  /* ============================= */
+  
+  .modal-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+  
+  .modal-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #06b6d4, #3b82f6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    margin: 0 auto 1.5rem;
+    box-shadow: 0 10px 30px rgba(6, 182, 212, 0.4);
+  }
+  
+  .modal-title {
+    font-size: 2rem;
+    font-weight: 900;
+    color: #0f172a;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.5px;
+  }
+  
+  .modal-subtitle {
+    color: #64748b;
+    font-size: 0.9375rem;
+  }
+  
+  /* ============================= */
+  /* FORMULARIO */
+  /* ============================= */
+  
+  .tarjeta-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .form-label {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: #0f172a;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+  .form-input {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 0.75rem;
+    font-size: 1rem;
+    color: #0f172a;
+    font-family: 'Inter', sans-serif;
+    transition: all 0.3s ease;
+  }
+  
+  .form-input:focus {
+    outline: none;
+    border-color: #06b6d4;
+    box-shadow: 0 0 0 4px rgba(6, 182, 212, 0.1);
+  }
+  
+  .form-input::placeholder {
+    color: #94a3b8;
+  }
+  
+  .form-input:disabled {
+    background: #f1f5f9;
+    cursor: not-allowed;
+  }
+  
+  /* Elementos de Stripe */
+  .stripe-element {
+    padding: 1rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 0.75rem;
+    transition: all 0.3s ease;
+  }
+  
+  .stripe-element:focus-within {
+    border-color: #06b6d4;
+    box-shadow: 0 0 0 4px rgba(6, 182, 212, 0.1);
+  }
+  
+  /* Fila de 2 columnas */
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  
+  /* Checkbox para guardar tarjeta */
+  .form-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem;
+    background: #f8fafc;
+    border-radius: 0.75rem;
+  }
+  
+  .checkbox-input {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: #06b6d4;
+  }
+  
+  .checkbox-label {
+    color: #475569;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    cursor: pointer;
+    user-select: none;
+  }
+  
+  /* Info de tarjeta de prueba */
+  .test-card-info {
+    padding: 1rem;
+    background: #fef3c7;
+    border: 2px solid #fbbf24;
+    border-radius: 0.75rem;
+    text-align: center;
+  }
+  
+  .test-card-title {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: #92400e;
+    margin-bottom: 0.5rem;
+  }
+  
+  .test-card-number {
+    font-size: 1.125rem;
+    font-weight: 900;
+    color: #78350f;
+    letter-spacing: 2px;
+    margin-bottom: 0.25rem;
+  }
+  
+  .test-card-details {
+    font-size: 0.8125rem;
+    color: #92400e;
+    font-weight: 600;
+  }
+  
+  /* ============================= */
+  /* MENSAJES */
+  /* ============================= */
+  
+  .error-message {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem;
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    border-radius: 0.75rem;
+    color: #ef4444;
+    font-size: 0.9375rem;
+    font-weight: 600;
+  }
+  
+  .success-message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 3rem 0;
+    animation: scaleIn 0.5s ease-out;
+  }
+  
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  .success-text {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #10b981;
+  }
+  
+  /* ============================= */
+  /* SEGURIDAD */
+  /* ============================= */
+  
+  .security-badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem;
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    border-radius: 0.75rem;
+    color: #16a34a;
+    font-size: 0.875rem;
+    font-weight: 600;
+  }
+  
+  /* ============================= */
+  /* BOTÓN SUBMIT */
+  /* ============================= */
+  
+  .submit-btn {
+    width: 100%;
+    padding: 1.25rem;
+    border: none;
+    border-radius: 1rem;
+    background: linear-gradient(135deg, #06b6d4, #3b82f6);
+    color: white;
+    font-size: 1.0625rem;
+    font-weight: 800;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    box-shadow: 0 10px 30px rgba(6, 182, 212, 0.3);
+  }
+  
+  .submit-btn:hover:not(:disabled) {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(6, 182, 212, 0.4);
+  }
+  
+  .submit-btn:active:not(:disabled) {
+    transform: translateY(-1px);
+  }
+  
+  .submit-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+  }
+  
+  /* Spinner */
+  .spinner {
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-top-color: white;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+  }
+  
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  /* ============================= */
+  /* RESPONSIVE */
+  /* ============================= */
+  
+  @media (max-width: 640px) {
+    .agregar-tarjeta-modal {
+      padding: 2rem 1.5rem;
+      border-radius: 1.5rem;
+    }
+  
+    .modal-title {
+      font-size: 1.625rem;
+    }
+  
+    .modal-icon {
+      width: 70px;
+      height: 70px;
+    }
+  
+    .form-row {
+      grid-template-columns: 1fr;
+    }
+  
+    .submit-btn {
+      padding: 1.125rem;
+    }
+  }
+  
+  /* ============================= */
+  /* ACCESIBILIDAD */
+  /* ============================= */
+  
+  @media (prefers-reduced-motion: reduce) {
+    .agregar-tarjeta-overlay,
+    .agregar-tarjeta-modal,
+    .success-message {
+      animation: none;
+    }
+    
+    .modal-close-btn:hover {
+      transform: none;
+    }
+  }

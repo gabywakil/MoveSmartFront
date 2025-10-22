@@ -1,0 +1,2 @@
+// src/config/stripe.ts
+export const STRIPE_PUBLIC_KEY = import.meta.env.VITE_STRIPE_PUBLIC_KEY || 'pk_test_51SKut9PaOt0CkVRihAr0Mzcx2Saw6rNqoMTkQCC2BJ2G2FsjGbaqL6P6cSE0RaVGqgjxLaHXHOPybfCqQdo1pwbI0098Q4Z85P';

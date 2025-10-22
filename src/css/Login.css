@@ -1,0 +1,316 @@
+body {
+  background: #cfd8da;
+  background-size: 400% 400%;
+  animation: gradientShift 12s ease infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+  margin: 0;
+}
+
+/* ✨ Animación de fondo */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* 🌟 Contenedor principal */
+.login-main {
+  position: relative;
+  width: 950px;
+  height: 600px;
+  background: #ecf0f3;
+  border-radius: 16px;
+  box-shadow: 10px 10px 25px #b8c6db, -10px -10px 25px #ffffff;
+  overflow: hidden;
+}
+
+/* 🌀 Logo */
+.login-logo {
+  position: absolute;
+  top: 25px;
+  left: 40px;
+  z-index: 10;
+}
+.login-logo img {
+  height: 50px;
+}
+
+/* 🧩 Formularios */
+.container {
+  position: absolute;
+  width: 45%;
+  height: 100%;
+  top: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 60px;
+  background: #ecf0f3;
+  transition: all 1.2s ease;
+  z-index: 2;
+  box-sizing: border-box;
+}
+
+.a-container {
+  left: 0;
+  z-index: 100;
+  transform: translateX(-100px);
+  transition: all 1.2s ease;
+}
+
+/* Contenedor B (Iniciar sesión) */
+.b-container {
+  position: absolute;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 60px;
+  transition: all 1.2s ease;
+}
+
+.b-container form {
+  width: 80%;
+  max-width: 350px;
+  text-align: left;
+}
+
+.is-z200 {
+  z-index: 200;
+  pointer-events: auto;
+}
+
+/* 🌈 Panel lateral */
+.switch {
+  position: absolute;
+  top: 0;
+  left: 45%;
+  width: 55%;
+  height: 100%;
+  background: linear-gradient(135deg, #00a8c6, #40c0cb, #aee239);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 50px;
+  transition: all 1.2s ease;
+  z-index: 150;
+  box-sizing: border-box;
+}
+
+.switch__circle {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  top: -250px;
+  left: -250px;
+  transition: all 1.2s ease;
+}
+
+.switch__circle--t {
+  top: auto;
+  bottom: -250px;
+  left: auto;
+  right: -250px;
+}
+
+.switch__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  width: 100%;
+  padding: 50px;
+  transition: all 1.2s ease;
+}
+
+/* ✍️ Formularios */
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+}
+
+.title {
+  color: #00a8c6;
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.form__span {
+  color: #555;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.form__input {
+  width: 100%;
+  max-width: 350px;
+  padding: 12px 20px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: none;
+  background: #ecf0f3;
+  box-shadow: inset 4px 4px 6px #d1d9e6, inset -4px -4px 6px #ffffff;
+  transition: all 0.3s ease;
+  font-family: "Poppins", sans-serif;
+}
+
+.form__input:focus {
+  outline: none;
+  box-shadow: inset 2px 2px 4px #cfd8dc, inset -2px -2px 4px #ffffff;
+}
+
+.form__link {
+  color: #00a8c6;
+  text-decoration: none;
+  font-size: 14px;
+  margin: 10px 0;
+  transition: color 0.3s ease;
+}
+
+.form__link:hover {
+  color: #40c0cb;
+}
+
+.form__button {
+  width: 200px;
+  padding: 12px;
+  border: none;
+  border-radius: 25px;
+  background: linear-gradient(90deg, #00a8c6, #40c0cb);
+  color: white;
+  font-weight: 600;
+  margin-top: 20px;
+  box-shadow: 5px 5px 10px #d1d9e6, -5px -5px 10px #ffffff;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.form__button:hover {
+  transform: translateY(-3px);
+  box-shadow: 3px 3px 8px #c3ccd9, -3px -3px 8px #ffffff;
+}
+
+.back-home {
+  background: #f0f0f0;
+  color: #333;
+}
+
+.switch__title {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.switch__description {
+  margin: 15px 0 25px;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #f8f9fa;
+}
+
+.switch__button {
+  background: #fff;
+  color: #00a8c6;
+  border-radius: 25px;
+  padding: 10px 30px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+  border: none;
+}
+
+.switch__button:hover {
+  background: #e0f7fa;
+}
+
+/* 🎬 Transiciones */
+.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.is-txl {
+  left: 55%;
+}
+
+.is-txr {
+  left: 0%;
+}
+
+.is-gx {
+  animation: growX 1.2s;
+}
+
+@keyframes growX {
+  0%, 100% { transform: scaleX(1); }
+  50% { transform: scaleX(1.05); }
+}
+
+/* 📱 Modo móvil */
+@media (max-width: 768px) {
+  body {
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .login-main {
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
+    box-shadow: none;
+    background: #ecf0f3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .login-logo {
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .container, .a-container, .b-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 2rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .switch {
+    display: none; /* 🔥 ocultamos el panel lateral */
+  }
+
+  .form {
+    width: 100%;
+    max-width: 340px;
+    text-align: center;
+  }
+
+  .title {
+    font-size: 26px;
+  }
+
+  .form__button {
+    width: 100%;
+  }
+}

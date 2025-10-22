@@ -1,0 +1,373 @@
+.perfil-page {
+    width: 100vw;
+    height: 100vh;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+  }
+  
+  /* 🔝 HEADER */
+  .perfil-header {
+    background: #ffffffee;
+    backdrop-filter: blur(8px);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e5e7eb;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  
+/* 🔝 LOGO MOVESMART */
+.perfil-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem; /* espacio entre el logo y el texto */
+    cursor: pointer;
+    text-decoration: none;
+  }
+  
+  .perfil-logo img {
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+  }
+  
+  .perfil-logo img:hover {
+    transform: scale(1.08);
+  }
+  
+  .perfil-logo span {
+    font-size: 1.6rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #00a8c6, #3b82f6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -0.5px;
+    line-height: 1; /* evita que el texto se vea descentrado */
+  }
+  
+  
+  .perfil-nav button {
+    background: none;
+    border: none;
+    margin-left: 1rem;
+    font-size: 1rem;
+    color: #64748b;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .perfil-nav button:hover,
+  .perfil-nav .active {
+    color: #00a8c6;
+  }
+  
+  /* 👤 HERO */
+  .perfil-hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(135deg, #00a8c6, #3b82f6);
+    color: white;
+    padding: 3rem 5rem;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin: 0;
+  }
+  
+  .perfil-user-block {
+    text-align: left;
+  }
+  
+  .perfil-avatar-container {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .perfil-avatar {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    border: 5px solid white;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  }
+  
+  .editar-foto {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    background: white;
+    border: none;
+    border-radius: 50%;
+    padding: 0.4rem;
+    color: #00a8c6;
+    cursor: pointer;
+  }
+  
+  .perfil-badge {
+    margin-top: 0.5rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.3rem 0.8rem;
+    border-radius: 999px;
+    font-weight: 600;
+  }
+  
+  /* 🧮 TARJETAS */
+  .perfil-stats {
+    display: flex;
+    flex: 2;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .perfil-card {
+    background: white;
+    color: #0f172a;
+    border-radius: 1rem;
+    padding: 1.5rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    min-width: 260px;
+    transition: transform 0.3s;
+  }
+  
+  .perfil-card:hover {
+    transform: translateY(-4px);
+  }
+  
+  .perfil-card button {
+    background: #00a8c6;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 0.5rem 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  
+  .perfil-card button:hover {
+    background: #3b82f6;
+  }
+  
+  /* 📊 TABS */
+  .perfil-tabs {
+    display: flex;
+    justify-content: center;
+    background: #f8fafc;
+    border-bottom: 1px solid #e5e7eb;
+  }
+  
+  .perfil-tabs button {
+    padding: 1rem 2rem;
+    background: none;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    color: #64748b;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    transition: 0.3s;
+  }
+  
+  .perfil-tabs button.active {
+    color: #00a8c6;
+    border-bottom: 3px solid #00a8c6;
+  }
+  
+  /* 📄 CONTENIDO */
+  .perfil-contenido {
+    flex: 1;
+    padding: 3rem 5rem;
+    overflow-y: auto;
+  }
+  
+  .viajes-list {
+    display: grid;
+    gap: 1rem;
+  }
+  
+  .viaje-card {
+    display: flex;
+    justify-content: space-between;
+    background: #f9fafb;
+    border-radius: 1rem;
+    padding: 1rem 1.5rem;
+    align-items: center;
+    transition: 0.3s;
+  }
+  
+  .viaje-card:hover {
+    background: #eef7fa;
+  }
+  
+  .viaje-card .costo {
+    color: #00a8c6;
+    font-weight: 700;
+  }
+  
+  /* ⚙️ CONFIGURACIÓN */
+  .config-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f9fafb;
+    padding: 1rem 1.5rem;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .config-item:hover {
+    background: #eef7fa;
+  }
+  
+  .logout {
+    width: 100%;
+    background: #ef4444;
+    color: white;
+    border: none;
+    padding: 0.8rem;
+    border-radius: 0.8rem;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  
+  .logout:hover {
+    opacity: 0.9;
+  }
+  
+  /* 💰 MODAL */
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 50;
+  }
+  
+  .modal {
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    width: 90%;
+    max-width: 380px;
+    text-align: center;
+    position: relative;
+  }
+  
+  .modal input {
+    width: 100%;
+    padding: 0.7rem;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 0.6rem;
+    margin-top: 1rem;
+  }
+  
+  .modal button.confirmar {
+    margin-top: 1.5rem;
+    background: #00a8c6;
+    color: white;
+    border: none;
+    border-radius: 0.6rem;
+    padding: 0.7rem 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  
+  .modal .cerrar {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    border: none;
+    background: none;
+    color: #64748b;
+    cursor: pointer;
+  }
+  
+  .modal .cerrar:hover {
+    color: #ef4444;
+  }
+  
+  /* 🧾 FOOTER */
+  .perfil-footer {
+    background: #fff;
+    border-top: 1px solid #e5e7eb;
+    padding: 1rem;
+    text-align: center;
+    color: #64748b;
+    font-size: 0.9rem;
+  }
+  
+
+  /* Tablets y pantallas medianas */
+@media (max-width: 1024px) {
+    .perfil-hero {
+      flex-direction: column;
+      padding: 2rem;
+      text-align: center;
+    }
+  
+    .perfil-stats {
+      flex-direction: column;
+      gap: 1rem;
+    }
+  }
+  
+  /* Celulares (pantallas pequeñas) */
+  @media (max-width: 768px) {
+    .perfil-header {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 1rem;
+    }
+  
+    .perfil-logo span {
+      font-size: 1.3rem;
+    }
+  
+    .perfil-avatar {
+      width: 100px;
+      height: 100px;
+    }
+  
+    .perfil-stats {
+      flex-direction: column;
+      gap: 1rem;
+    }
+  
+    .perfil-card {
+      width: 100%;
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .perfil-tabs {
+      flex-wrap: wrap;
+    }
+  
+    .perfil-contenido {
+      padding: 1.5rem;
+    }
+  }
+
+  .perfil-card.tarjeta {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+  }
+  
+  
